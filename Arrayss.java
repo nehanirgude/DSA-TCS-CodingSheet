@@ -286,6 +286,30 @@ public class Arrayss {
         }
     }
 
+    // Problem Statement: Find all the repeating elements present in an array.
+
+    public static void findRepeating(int arr[]) {
+
+        int n = arr.length;
+
+        System.out.print("Repeating elements: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                // Check if arr[i] is equal to arr[j]
+                if (arr[i] == arr[j]) {
+                    System.out.print(arr[i] + " ");
+                    // Mark all further duplicates of arr[i] as processed
+                    // for (int k = j; k < n; k++) {
+                    // if (arr[k] == arr[i]) {
+                    // arr[k] = Integer.MIN_VALUE; // Use a marker value
+                    // }
+                    // }
+                    break;
+                }
+            }
+        }
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -348,10 +372,14 @@ public class Arrayss {
         // removeDuplicateUnsorted(arr);
 
         // 13
-        int arr[] = { 1, 2, 3, 4, 5 };
-        int n = 5;
-        int value = 6;
-        addElement(arr, value);
+        // int arr[] = { 1, 2, 3, 4, 5 };
+        // int n = 5;
+        // int value = 6;
+        // addElement(arr, value);
+
+        // 14
+        int arr[] = { 1, 1, 2, 3, 4, 4, 5, 2 };
+        findRepeating(arr);
 
     }
 }
