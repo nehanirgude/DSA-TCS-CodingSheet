@@ -192,6 +192,20 @@ public class Arrayss {
 
     }
 
+    // Problem Statement: Given an unsorted array, find the median of the given
+    // array.
+    public static int median(int arr[]) {
+
+        Arrays.sort(arr);
+
+        int si = 0;
+        int ei = arr.length - 1;
+
+        int mid = si + ei / 2;
+        return arr[mid];
+
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -238,8 +252,12 @@ public class Arrayss {
         // }
 
         // 9
-        int arr[] = { 1, 2, 3, 4, 5 };
-        System.out.println(averageOfArr(arr));
+        // int arr[] = { 1, 2, 3, 4, 5 };
+        // System.out.println(averageOfArr(arr));
+
+        // 10
+        int arr[] = { 2, 4, 1, 3, 5 };
+        System.out.println(median(arr));
 
     }
 }
