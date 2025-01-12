@@ -228,6 +228,34 @@ public class Arrayss {
 
     }
 
+    // remove duplicates from unsorted array
+    public static void removeDuplicateUnsorted(int arr[]) {
+        int n = arr.length;
+        // take one array and make all elements as 1
+        int mark[] = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            mark[i] = 1;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (mark[i] == 1) {
+                for (int j = i + 1; j < n; j++) {
+                    if (arr[i] == arr[j]) {
+                        mark[j] = 0;
+                    }
+                }
+            }
+
+        }
+        for (int i = 0; i < n; i++) {
+            if (mark[i] == 1) {
+                System.out.print(arr[i] + ",");
+            }
+        }
+
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -282,8 +310,12 @@ public class Arrayss {
         // System.out.println(median(arr));
 
         // 11
-        int arr[] = { 1, 1, 2, 2, 2, 3, 3 };
-        removeDuplicate(arr);
+        // int arr[] = { 1, 1, 2, 2, 2, 3, 3 };
+        // removeDuplicate(arr);
+
+        // 12
+        int arr[] = { 2, 3, 1, 9, 3, 1, 3, 9 };
+        removeDuplicateUnsorted(arr);
 
     }
 }
