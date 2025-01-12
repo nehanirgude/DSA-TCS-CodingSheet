@@ -206,6 +206,28 @@ public class Arrayss {
 
     }
 
+    // Problem Statement: Given an integer array sorted in non-decreasing order,
+    // remove the duplicates in place such that each unique element appears only
+    // once. The relative order of the elements should be kept the same.
+
+    public static void removeDuplicate(int arr[]) {
+
+        int writeIdx = 0; // to track position of next unique element
+
+        for (int i = 0; i < arr.length; i++) {
+            if (i == 0 || arr[i] != arr[i - 1]) {
+
+                arr[writeIdx] = arr[i];
+                writeIdx++;
+            }
+        }
+
+        for (int i = 0; i < writeIdx; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -256,8 +278,12 @@ public class Arrayss {
         // System.out.println(averageOfArr(arr));
 
         // 10
-        int arr[] = { 2, 4, 1, 3, 5 };
-        System.out.println(median(arr));
+        // int arr[] = { 2, 4, 1, 3, 5 };
+        // System.out.println(median(arr));
+
+        // 11
+        int arr[] = { 1, 1, 2, 2, 2, 3, 3 };
+        removeDuplicate(arr);
 
     }
 }
