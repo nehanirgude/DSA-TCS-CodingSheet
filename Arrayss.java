@@ -256,6 +256,36 @@ public class Arrayss {
 
     }
 
+    // Problem Statement: Given an array of N integers, write a program to add an
+    // array element at the beginning, end, and at a specific position.
+
+    public static void addElement(int arr[], int value) {
+        // for adding at the end and middle simply use arraylist
+        // ArrayList<Integer> list = new ArrayList<>();
+
+        // for (int i = 0; i < arr.length; i++) {
+        // list.add(arr[i]);
+        // }
+        // System.out.println(list);
+        // list.add(7);
+        // System.out.println(list);
+        // list.set(3, 8);
+        // System.out.println(list);
+
+        // to insert at begining
+
+        int temp[] = new int[arr.length + 1];
+        temp[0] = value;
+        int k = 1;
+        for (int i = 0; i < arr.length; i++) {
+            temp[k] = arr[i];
+            k++;
+        }
+        for (int i = 0; i < temp.length; i++) {
+            System.out.print(temp[i] + " ");
+        }
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -314,8 +344,14 @@ public class Arrayss {
         // removeDuplicate(arr);
 
         // 12
-        int arr[] = { 2, 3, 1, 9, 3, 1, 3, 9 };
-        removeDuplicateUnsorted(arr);
+        // int arr[] = { 2, 3, 1, 9, 3, 1, 3, 9 };
+        // removeDuplicateUnsorted(arr);
+
+        // 13
+        int arr[] = { 1, 2, 3, 4, 5 };
+        int n = 5;
+        int value = 6;
+        addElement(arr, value);
 
     }
 }
