@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Arrays;
 
 public class Arrayss {
 
@@ -360,6 +359,30 @@ public class Arrayss {
         return result;
     }
 
+    // Problem Statement: Given an array of N integers, the task is to replace each
+    // element of the array by its rank in the array.
+
+    // Examples:
+
+    // Example 1:
+    // Input: 20 15 26 2 98 6
+    // Output: 4 3 5 1 6 2
+
+    public static void rank(int arr[]) {
+
+        for (int i = 0; i < arr.length; i++) {
+            Set<Integer> s = new HashSet<Integer>();
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    s.add(arr[j]);
+                }
+
+            }
+            int rankk = s.size() + 1;
+            System.out.print(rankk + " ");
+        }
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -442,8 +465,12 @@ public class Arrayss {
         // skiped
 
         // 16
-        int arr[] = { 1, 2, 3, 4, 5, 0 };
-        System.out.print(maxProd(arr));
+        // int arr[] = { 1, 2, 3, 4, 5, 0 };
+        // System.out.print(maxProd(arr));
+
+        // 17
+        int arr[] = { 20, 15, 26, 2, 98, 6 };
+        rank(arr);
 
     }
 }
