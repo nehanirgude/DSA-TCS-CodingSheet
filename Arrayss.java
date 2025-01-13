@@ -310,6 +310,31 @@ public class Arrayss {
         }
     }
 
+    public static void nonRepeating(int arr[]) {
+        int result[] = new int[arr.length];
+        int idx = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0;
+
+            for (int j = 0; j < arr.length; j++) {
+
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+
+            }
+            if (count == 1) {
+                result[idx++] = arr[i];
+            }
+
+        }
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + " ");
+        }
+
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -378,8 +403,11 @@ public class Arrayss {
         // addElement(arr, value);
 
         // 14
-        int arr[] = { 1, 1, 2, 3, 4, 4, 5, 2 };
-        findRepeating(arr);
+        // int arr[] = { 1, 1, 2, 3, 4, 4, 5, 2 };
+        // findRepeating(arr);
+
+        int arr[] = { 1, 2, -1, 1, 3, 1 };
+        nonRepeating(arr);
 
     }
 }
