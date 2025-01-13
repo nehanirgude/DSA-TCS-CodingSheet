@@ -310,7 +310,7 @@ public class Arrayss {
         }
     }
 
-    public static void nonRepeating(int arr[]) {
+    public static int[] nonRepeating(int arr[]) {
         int result[] = new int[arr.length];
         int idx = 0;
 
@@ -329,10 +329,35 @@ public class Arrayss {
             }
 
         }
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
-        }
+        return Arrays.copyOfRange(result, 0, idx);
 
+    }
+    // Problem Statement: Given an array that contains both negative and positive
+    // integers, find the maximum product subarray.
+
+    // Examples
+    // Example 1:Input:
+
+    // Nums=[1,2,3,4,5,0]Output:
+
+    // 120
+
+    public static int maxProd(int arr[]) {
+        int result = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            for (int j = i + 1; j < arr.length; j++) {
+                int product = 1;
+                for (int k = i; k < j; k++) {
+                    product *= arr[k];
+                    result = Math.max(product, result);
+
+                }
+
+            }
+        }
+        return result;
     }
 
     public static void main(String args[]) {
@@ -406,8 +431,19 @@ public class Arrayss {
         // int arr[] = { 1, 1, 2, 3, 4, 4, 5, 2 };
         // findRepeating(arr);
 
-        int arr[] = { 1, 2, -1, 1, 3, 1 };
-        nonRepeating(arr);
+        // int arr[] = { 1, 2, -1, 1, 3, 1 };
+        // nonRepeating(arr);
+
+        // int newArr[] = nonRepeating(arr);
+        // System.out.print(Arrays.toString(newArr));
+
+        // 15
+        // int arr[]={};
+        // skiped
+
+        // 16
+        int arr[] = { 1, 2, 3, 4, 5, 0 };
+        System.out.print(maxProd(arr));
 
     }
 }
