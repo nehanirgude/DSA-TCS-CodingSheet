@@ -383,6 +383,20 @@ public class Arrayss {
         }
     }
 
+    // Rotate array by K elements
+
+    public static void reversee(int arr[], int start, int end) {
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+
+        }
+
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -469,8 +483,20 @@ public class Arrayss {
         // System.out.print(maxProd(arr));
 
         // 17
-        int arr[] = { 20, 15, 26, 2, 98, 6 };
-        rank(arr);
+        // int arr[] = { 20, 15, 26, 2, 98, 6 };
+        // rank(arr);
+
+        // 18
+        // int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+        // int k = 2;
+        // int start;
+        // int end;
+        // reversee(arr, 0, arr.length - 1);
+        // reversee(arr, 0, k - 1);
+        // reversee(arr, k, arr.length - 1);
+        // for (int i = 0; i < arr.length; i++) {
+        // System.out.print(arr[i] + " ");
+        // }
 
     }
 }
