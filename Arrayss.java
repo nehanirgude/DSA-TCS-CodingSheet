@@ -428,6 +428,17 @@ public class Arrayss {
         return -1;
     }
 
+    public static void checkSubset(int arr1[], int arr2[]) {
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    System.out.print(arr1[i] + "is present in:" + arr2[j]);
+                }
+            }
+            System.out.println("arr1 is noy subset of arr2");
+        }
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -534,9 +545,14 @@ public class Arrayss {
         // System.out.println(equilibrium(arr));
 
         // 20
-        int arr[] = { 1, 2, 3, 4, 5 };
-        int key = 3;
-        System.out.println(searchKey(arr, 3));
+        // int arr[] = { 1, 2, 3, 4, 5 };
+        // int key = 3;
+        // System.out.println(searchKey(arr, 3 ));
+
+        // 21
+        int arr1[] = { 1, 3, 4, 5, 2 };
+        int arr2[] = { 2, 4, 3, 1, 7, 5, 15 };
+        checkSubset(arr1, arr2);
 
     }
 }
