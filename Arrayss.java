@@ -417,6 +417,17 @@ public class Arrayss {
 
     }
 
+    public static int searchKey(int arr[], int key) {
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                return i;
+
+            }
+        }
+        return -1;
+    }
+
     public static void main(String args[]) {
 
         // 1
@@ -519,8 +530,13 @@ public class Arrayss {
         // }
 
         // 19
-        int arr[] = { 2, 3, -1, 8, 4 };
-        System.out.println(equilibrium(arr));
+        // int arr[] = { 2, 3, -1, 8, 4 };
+        // System.out.println(equilibrium(arr));
+
+        // 20
+        int arr[] = { 1, 2, 3, 4, 5 };
+        int key = 3;
+        System.out.println(searchKey(arr, 3));
 
     }
 }
