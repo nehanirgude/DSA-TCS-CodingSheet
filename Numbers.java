@@ -258,6 +258,47 @@ public class Numbers {
 
     }
 
+    // print power of given num
+    public static int power(int x, int n) {
+
+        int pwr = (int) Math.pow(x, n);
+        return pwr;
+    }
+    // Problem Statement: Find all factors of a number or find all distinct divisors
+    // of a natural number.
+
+    public static void factors(int n) {
+
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.print(i + " ,");
+            }
+        }
+    }
+    // Problem Statement: Given an integer Print “YES” if it is a strong number else
+    // print “NO”.
+
+    public static int Factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+        return fact;
+    }
+
+    // Function to compute sum of factorials
+    public static int Strong_No(int num) {
+        int sum = 0;
+
+        // Extract all the digits from num
+        while (num > 0) {
+            int digit = num % 10;
+            sum = sum + Factorial(digit);
+            num = num / 10;
+        }
+        return sum;
+    }
+
     public static void main(String argsp[]) {
 
         // 1
@@ -338,8 +379,28 @@ public class Numbers {
         // fibonacci(num);
 
         // 17
-        int num = 5;
-        System.out.println(fact(num));
+        // int num = 5;
+        // System.out.println(fact(num));
+
+        // 18
+        // int x = 2;
+        // int n = 5;
+        // System.out.println(power(x, n));
+
+        // 19
+        // int n = 6;
+        // factors(n);
+
+        // 20
+        int number = 145;
+        int answer = Strong_No(number);
+
+        if (answer == number && number != 0) {
+
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
 
     }
 }
