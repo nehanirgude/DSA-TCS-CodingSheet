@@ -361,6 +361,8 @@ public class Numbers {
     }
 
     // check wether the number is harshad number or not
+    // Explanation: 3+7+8=18. 378 is divisible by 18. Therefore 378 is a harshad
+    // number.
     public static void harshad(int n) {
         int duplicate = n;
         int sum = 0;
@@ -374,6 +376,40 @@ public class Numbers {
         } else {
             System.out.println("number is not harshad number");
         }
+    }
+
+    // check the number is abudant number or not
+    // Explanation: Divisors of 18 are 1,2,3,6,9. 1+2+3+6+9=21, Since 21 is greater
+    // than 18, 18 is an abundant number.
+
+    public static void abudant(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.print(i + " ");
+                sum += i;
+            }
+        }
+        sum -= n;
+        if (sum > n) {
+            System.out.println("number is abudant number");
+
+        } else {
+            System.out.println("number is not abudant number");
+        }
+
+    }
+
+    // sum of digits of the number
+
+    public static int sum(int n) {
+        int summ = 0;
+        while (n > 0) {
+            int ld = n % 10;
+            summ += ld;
+            n = n / 10;
+        }
+        return summ;
     }
 
     public static void main(String argsp[]) {
@@ -494,8 +530,16 @@ public class Numbers {
         // LCM(a, b);
 
         // 24
-        int n = 379;
-        harshad(n);
+        // int n = 379;
+        // harshad(n);
+
+        // 28
+        // int n = 21;
+        // abudant(n);
+
+        // 30
+        int n = 472;
+        System.out.println(sum(n));
 
     }
 }
