@@ -135,6 +135,70 @@ public class Numbers {
         }
         return false;
     }
+    // to check whether the number is negative or positive
+
+    public static void negOrPos(int number) {
+
+        if (number > 0) {
+            System.out.println(number + ":" + "number is positive");
+        } else {
+            System.out.println(number + ":" + "number is negative");
+        }
+    }
+
+    // to calculate sum of Ap series
+
+    public static double sumOfAp(int n, float a, float d) {
+
+        double sum = (n / 2.0) * (2.0 * a + (n - 1) * d);
+        return sum;
+    }
+
+    // calculate sum of GP series
+    public static double SumofGP(double a, double r, int n) {
+        double sum = 0.0;
+        for (int i = 0; i < n; i++) {
+            sum += a;
+            a = a * r;
+        }
+        return sum;
+    }
+
+    // greatest of two numbers
+
+    public static int greatestOfTwoNum(int a, int b) {
+        if (a > b) {
+            return a;
+        }
+        return b;
+
+    }
+
+    // greatest of three number
+    public static int greatestOfThreeNum(int a, int b, int c) {
+        if (a > b && a > c) {
+            return a;
+        }
+        if (b > a && b > c) {
+            return b;
+        }
+        return c;
+    }
+
+    // reverse the dif=gits of two numbers
+    public static int reverseDigits(int Num) {
+        int newNum = 0;
+
+        while (Num > 0) {
+            int lastDigit = Num % 10;
+
+            newNum = (newNum * 10) + lastDigit;
+
+            Num = Num / 10;
+        }
+        return newNum;
+
+    }
 
     public static void main(String argsp[]) {
 
@@ -164,7 +228,7 @@ public class Numbers {
         // System.out.println(isPerfect(number));
 
         // 7
-        int number = 16;
+        // int number = 16;
         // System.out.println(isOddEven(number));
 
         // boolean result = isOddEven(number);
@@ -173,6 +237,39 @@ public class Numbers {
         // } else {
         // System.out.println("number is odd");
         // }
+
+        // 8
+        // int number = -2;
+        // negOrPos(number);
+
+        // 9
+        // int n = 4;
+        // float a = 2;
+        // float d = 2;
+        // System.out.println(sumOfAp(n, a, d));
+
+        // 10
+        // double a = 3; // first term
+        // double r = 5; // common ratio
+        // int n = 2; // numbers of terms
+
+        // 11
+        // int a = 5;
+        // int b = 3;
+        // System.out.println(greatestOfTwoNum(a, b));
+
+        // 12
+        // int a = 3;
+        // int b = 1;
+        // int c = 6;
+        // System.out.println(greatestOfThreeNum(a, b, c));
+
+        // 13
+        // leap year -skipped
+
+        // 14
+        int Num = 472;
+        System.out.println(reverseDigits(Num));
 
     }
 }
