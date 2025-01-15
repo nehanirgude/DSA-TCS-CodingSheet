@@ -200,6 +200,54 @@ public class Numbers {
 
     }
 
+    // largest and smallest digit in numbers
+
+    public static int largestVSsmallest(int num) {
+
+        int duplicate = num;
+        int reverse = 0;
+        int currNum = 0; // to find largest digit initialize it by 0
+        // int currNum = num % 10; //to find smallest initialize with num%10;
+
+        // largest
+        while (num > 0) {
+            int lastDigit = num % 10;
+            // largest
+            // currNum = Math.max(currNum, lastDigit);
+            // smallest
+            currNum = Math.min(currNum, lastDigit);
+
+            reverse = (num * 10) + lastDigit;
+
+            num = num / 10;
+
+        }
+        return currNum;
+    }
+
+    // Problem Statement: Given an integer N. Print the Fibonacci series up to the
+    // Nth term.
+
+    public static void fibonacci(int num) {
+
+        int fib[] = new int[num + 1];
+
+        fib[0] = 0;
+        fib[1] = 1;
+
+        // fibonacci series is sequence of sum of its previous two numbers
+        for (int i = 2; i <= num; i++) {
+
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        // printing the series
+        for (int i = 0; i <= num; i++) {
+            System.out.print(fib[i] + " ");
+        }
+
+    }
+
     public static void main(String argsp[]) {
 
         // 1
@@ -268,8 +316,16 @@ public class Numbers {
         // leap year -skipped
 
         // 14
-        int Num = 472;
-        System.out.println(reverseDigits(Num));
+        // int Num = 472;
+        // System.out.println(reverseDigits(Num));
+
+        // 15
+        // int num = 2746;
+        // System.out.println(largestVSsmallest(num));
+
+        // 16
+        int num = 5;
+        fibonacci(num);
 
     }
 }
