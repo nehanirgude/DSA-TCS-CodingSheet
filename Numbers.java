@@ -401,6 +401,15 @@ public class Numbers {
     }
 
     // sum of digits of the number
+    public static int sumOfDigitsInRange(int l, int r) {
+        int sum = 0;
+
+        for (int i = l; i <= r; i++) {
+            sum += i;
+
+        }
+        return sum;
+    }
 
     public static int sum(int n) {
         int summ = 0;
@@ -411,6 +420,8 @@ public class Numbers {
         }
         return summ;
     }
+
+    // Problem Statement: Find the sum of numbers in the given range.
 
     public static void main(String argsp[]) {
 
@@ -538,8 +549,13 @@ public class Numbers {
         // abudant(n);
 
         // 30
-        int n = 472;
-        System.out.println(sum(n));
+        // int n = 472;
+        // System.out.println(sum(n));
+
+        // 31
+        int l = 2;
+        int r = 7;
+        System.out.println(sumOfDigitsInRange(l, r));
 
     }
 }
