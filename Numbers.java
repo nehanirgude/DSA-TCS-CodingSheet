@@ -317,6 +317,64 @@ public class Numbers {
         return true;
 
     }
+    /*
+     * /
+     * Example 1:
+     * Input:N1 = 9, N2 = 12
+     * 
+     * Output:3
+     * Explanation:Factors of 9: 1, 3 and 9
+     * Factors of 12: 1, 2, 3, 4, 6, 12
+     * Common Factors: 1, 3 out of which 3 is the greatest hence it is the GCD.
+     */
+
+    public static int GCD(int n1, int n2) {
+
+        // factors of 9
+        int gcd = 1;
+        // Iterate from 1 up to
+        // the minimum of n1 and n2
+        for (int i = 1; i <= Math.min(n1, n2); i++) {
+            // Check if i is a common
+            // factor of both n1 and n2
+            if (n1 % i == 0 && n2 % i == 0) {
+                // Update gcd to the
+                // current common factor i
+                gcd = i;
+            }
+        }
+        return gcd;
+
+    }
+
+    // LCM
+    public static void LCM(int a, int b) {
+        int gcd = 1;
+        for (int i = 1; i <= Math.min(a, b); i++) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;
+            }
+        }
+        int lcm = (a * b) / gcd;
+        System.out.print("The LCM of the two given numbers is " + lcm);
+
+    }
+
+    // check wether the number is harshad number or not
+    public static void harshad(int n) {
+        int duplicate = n;
+        int sum = 0;
+        while (n > 0) {
+            int lastDigit = n % 10;
+            sum += lastDigit;
+            n = n / 10;
+        }
+        if (duplicate % sum == 0) {
+            System.out.println("number is harshad number");
+        } else {
+            System.out.println("number is not harshad number");
+        }
+    }
 
     public static void main(String argsp[]) {
 
@@ -422,8 +480,22 @@ public class Numbers {
         // }
 
         // 21
-        int n = 76;
-        System.out.print(automorphic(n));
+        // int n = 76;
+        // System.out.print(automorphic(n));
+
+        // 22
+        // int n1 = 9;
+        // int n2 = 12;
+        // System.out.println(GCD(n1, n2));
+
+        // 23
+        // int a = 4;
+        // int b = 8;
+        // LCM(a, b);
+
+        // 24
+        int n = 379;
+        harshad(n);
 
     }
 }
