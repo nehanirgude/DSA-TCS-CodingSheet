@@ -298,6 +298,25 @@ public class Numbers {
         }
         return sum;
     }
+    // Problem Statement: Given a number, check if it is automorphic or not. A
+    // number is called an Automorphic number if and only if its square ends in the
+    // same digits as the number itself.
+
+    public static boolean automorphic(int n) {
+
+        int prod = n * n;
+
+        while (n > 0) {
+            if (prod % 10 != n % 10) {
+                return false;
+            }
+
+            prod = prod / 10;
+            n = n / 10;
+        }
+        return true;
+
+    }
 
     public static void main(String argsp[]) {
 
@@ -392,15 +411,19 @@ public class Numbers {
         // factors(n);
 
         // 20
-        int number = 145;
-        int answer = Strong_No(number);
+        // int number = 145;
+        // int answer = Strong_No(number);
 
-        if (answer == number && number != 0) {
+        // if (answer == number && number != 0) {
 
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        // System.out.println("YES");
+        // } else {
+        // System.out.println("NO");
+        // }
+
+        // 21
+        int n = 76;
+        System.out.print(automorphic(n));
 
     }
 }
