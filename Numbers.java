@@ -423,6 +423,28 @@ public class Numbers {
 
     // Problem Statement: Find the sum of numbers in the given range.
 
+    // 32
+    // Problem Statement: Find permutations in which n people can occupy r seats in
+    // a classroom.
+
+    public static void permutations(int n, int r) {
+
+        int nfact = 1;
+        for (int i = 1; i <= n; i++) {
+            nfact *= i;
+        }
+
+        int nmr = n - r;
+        int nmrfact = 1;
+        for (int i = 1; i <= nmr; i++) {
+            nmrfact *= i;
+        }
+
+        int result = nfact / nmrfact;
+        System.out.println(result);
+
+    }
+
     public static void main(String argsp[]) {
 
         // 1
@@ -553,9 +575,14 @@ public class Numbers {
         // System.out.println(sum(n));
 
         // 31
-        int l = 2;
-        int r = 7;
-        System.out.println(sumOfDigitsInRange(l, r));
+        // int l = 2;
+        // int r = 7;
+        // System.out.println(sumOfDigitsInRange(l, r));
+
+        // 32
+        int n = 5;
+        int r = 3;
+        permutations(n, r);
 
     }
 }
