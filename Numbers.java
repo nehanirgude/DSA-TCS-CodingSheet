@@ -461,6 +461,9 @@ public class Numbers {
 
     }
 
+    // 36
+    // find the roots of quadratic equations
+
     public static void main(String argsp[]) {
 
         // 1
@@ -607,9 +610,9 @@ public class Numbers {
         // int n = 102003;
 
         // 35
-        int r = 5;
-        double pie = 3.14;
-        System.out.println(areaOfCircle(r, pie));
+        // int r = 5;
+        // double pie = 3.14;
+        // System.out.println(areaOfCircle(r, pie));
 
     }
 }
