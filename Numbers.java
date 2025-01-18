@@ -444,6 +444,22 @@ public class Numbers {
         System.out.println(result);
 
     }
+    // 34
+    // Problem Statement: You are given an integer. Your task is to replace all the
+    // zeros in the integer with ones.
+
+    // skipped
+
+    // 35
+    // find the area of the circle
+    public static double areaOfCircle(int r, double pie) {
+
+        // formula pi r square
+        int square = r * r;
+        double area = pie * square;
+        return area;
+
+    }
 
     public static void main(String argsp[]) {
 
@@ -580,9 +596,20 @@ public class Numbers {
         // System.out.println(sumOfDigitsInRange(l, r));
 
         // 32
-        int n = 5;
-        int r = 3;
-        permutations(n, r);
+        // int n = 5;
+        // int r = 3;
+        // permutations(n, r);
+
+        // 33
+        // skipped
+
+        // 34
+        // int n = 102003;
+
+        // 35
+        int r = 5;
+        double pie = 3.14;
+        System.out.println(areaOfCircle(r, pie));
 
     }
 }
